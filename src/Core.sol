@@ -17,9 +17,9 @@ contract Core is Ownable, Initializable {
         ACCOUNT_IMPL = _accountImpl;
     }
 
-    function createAccount(uint256 _telegramId) external onlyOwner returns (address){
+    function createAccount(address _address) external onlyOwner returns (address){
         
-        address account = LibClone.cloneDeterministic(ACCOUNT_IMPL, keccak256(abi.encodePacked(_telegramId)));
+        address account = LibClone.cloneDeterministic(ACCOUNT_IMPL, keccak256(abi.encodePacked(_address)));
         IAccount(account).initialize(address(this));
 
         return account;
