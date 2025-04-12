@@ -1,12 +1,9 @@
 ## DEPLOYED @ SEP
 
-No files changed, compilation skipped
-Script ran successfully.
-
 == Logs ==
-Deployer: 0xAF7fBBFE990427B0eC8Cc477f9466Aedfc3d2717
-AccountImpl: 0xA2DFCC7Fb9b38782CA65904877cdb234bd407A43
-Core: 0x714212877F63f296D643318935dc1fC19600426F
+  Deployer: 0xAF7fBBFE990427B0eC8Cc477f9466Aedfc3d2717
+  AccountImpl: 0x0e4d9e23a381f741D48b5c4984995A937aA4f183
+  Core: 0x1c0E0c06d2ad6A579b227fdA19625173c96b4984
 
 ## Setting up 1 EVM.
 
@@ -14,29 +11,29 @@ Core: 0x714212877F63f296D643318935dc1fC19600426F
 
 Chain 11155111
 
-Estimated gas price: 0.002467772 gwei
+Estimated gas price: 0.001807574 gwei
 
-Estimated total gas used for script: 2530427
+Estimated total gas used for script: 2435489
 
-Estimated amount required: 0.000006244516898644 ETH
+Estimated amount required: 0.000004402326593686 ETH
 
 ==========================
 
-### sepolia
+##### sepolia
+✅  [Success] Hash: 0xf52c1e2f19080ee9cbc2d8766df776cbc34e4e54a6bf50bb5d9c061f42052640
+Contract Address: 0x1c0E0c06d2ad6A579b227fdA19625173c96b4984
+Block: 8105005
+Paid: 0.000001193341299391 ETH (857089 gas * 0.001392319 gwei)
 
-✅  [Success] Hash: 0x07f4518f649d4c942c059dcacfbff08364242ae41936b2f6b4961d798c77d7ae
-Contract Address: 0xA2DFCC7Fb9b38782CA65904877cdb234bd407A43
-Block: 8104839
-Paid: 0.0000018326687134 ETH (1016365 gas * 0.00180316 gwei)
 
-### sepolia
+##### sepolia
+✅  [Success] Hash: 0x764a7dd2b0e090f8f31ff27c0d642126b8332010490bf6a216ee1307a62c9f96
+Contract Address: 0x0e4d9e23a381f741D48b5c4984995A937aA4f183
+Block: 8105005
+Paid: 0.000001415104300435 ETH (1016365 gas * 0.001392319 gwei)
 
-✅  [Success] Hash: 0xd21b92c1d1f1d0ea0dd7ea1b9df57649f8f555fba7a80e541b52cd64af33f8ff
-Contract Address: 0x714212877F63f296D643318935dc1fC19600426F
-Block: 8104839
-Paid: 0.00000167715157288 ETH (930118 gas * 0.00180316 gwei)
-
-✅ Sequence #1 on sepolia | Total Paid: 0.00000350982028628 ETH (1946483 gas * avg 0.00180316 gwei)
+✅ Sequence #1 on sepolia | Total Paid: 0.000002608445599826 ETH (1873454 gas * avg 0.001392319 gwei)
+                                                                                                                                                                                                             
 
 ==========================
 
