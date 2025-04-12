@@ -32,11 +32,9 @@ contract Core is Ownable, Initializable {
     ) external onlyOwner returns (bytes memory) {
         require(_account != address(0), "Account address cannot be zero");
         require(_target != address(0), "Target address cannot be zero");
-        require(_data.length > 0, "Data cannot be empty");
 
         address account = accounts[_account];
         bytes memory response = IAccount(account).delegatecall(_target, _data);
-        require(response.length > 0, "Delegatecall failed");
         return response;
     }
 }
