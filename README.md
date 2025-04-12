@@ -2,6 +2,7 @@ Compiler run successful!
 Script ran successfully.
 
 == Logs ==
+
   Deployer: 0xAF7fBBFE990427B0eC8Cc477f9466Aedfc3d2717
   AccountImpl: 0x4402d073ea722AB69879Be1fC1F1C22CBc96C261
   Core: 0xbcCC18aa7227723Accd4A95c290605cEE4cb946A
