@@ -57,8 +57,10 @@ contract AccountImpl is IAccount, Initializable {
         emit ClaimedTokens(token, _owner, amount);
     }
 
-    function delegatecall(address target, bytes memory data) external onlyCore returns (bytes memory) {
-        return target._delegatecall(data);
+    function callDapp(address target, bytes memory data) external onlyCore returns (bytes memory) {
+        (bool success, bytes memory returnData) = target.call(data);
+        require(success, "Call to dApp failed");
+        return returnData;
     }
 
     receive() external payable {}

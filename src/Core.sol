@@ -26,15 +26,15 @@ contract Core is Ownable, Initializable {
     }
 
     function excute(
-        address _account,
+        address _user,
         address _target,
         bytes memory _data
     ) external onlyOwner returns (bytes memory) {
-        require(_account != address(0), "Account address cannot be zero");
+        require(_user != address(0), "Account address cannot be zero");
         require(_target != address(0), "Target address cannot be zero");
 
-        address account = accounts[_account];
-        bytes memory response = IAccount(account).delegatecall(_target, _data);
-        return response;
+        address account = accounts[_user];
+        return IAccount(account).callDapp(_target, _data);
     }
+
 }

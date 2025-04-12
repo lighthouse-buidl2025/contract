@@ -7,5 +7,5 @@ interface IAccount {
     function core() external view returns (address);
     function setOwner(address newOwner) external;
     function claimTokens(address token, uint256 amount) external;
-    function delegatecall(address target, bytes calldata data) external returns (bytes memory);
+    function callDapp(address target, bytes calldata data) external returns (bytes memory);
 }
