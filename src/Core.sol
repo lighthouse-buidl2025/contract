@@ -10,6 +10,7 @@ import { Clones } from "./dependencies/openzeppelin/upgradeability/Clones.sol";
 
 
 contract Core is Ownable, Initializable {
+    mapping(address => address) public accounts;
     address public ACCOUNT_IMPL;
 
     constructor(address _accountImpl) {
@@ -17,12 +18,11 @@ contract Core is Ownable, Initializable {
         ACCOUNT_IMPL = _accountImpl;
     }
 
-    function createAccount(address _address) external onlyOwner returns (address){
-        
+    function createAccount(address _address) external onlyOwner {
         address account = LibClone.cloneDeterministic(ACCOUNT_IMPL, keccak256(abi.encodePacked(_address)));
         IAccount(account).initialize(address(this));
+        accounts[_address] = account;
 
-        return account;
     }
 
     function excute(
@@ -34,7 +34,8 @@ contract Core is Ownable, Initializable {
         require(_target != address(0), "Target address cannot be zero");
         require(_data.length > 0, "Data cannot be empty");
 
-        bytes memory response = IAccount(_account).delegatecall(_target, _data);
+        address account = accounts[_account];
+        bytes memory response = IAccount(account).delegatecall(_target, _data);
         require(response.length > 0, "Delegatecall failed");
         return response;
     }
